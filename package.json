@@ -1,0 +1,32 @@
+{
+  "name": "src2",
+  "version": "1.0.0",
+  "description": "JSON file reader utilities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "dev": "tsc --watch",
+    "start": "nodemon --exec ts-node src/index.ts",
+    "test": "npm run build && node dist/readUsers.js",
+    "start:db": "npm run build && node dist/src/runWithDb.js"
+  },
+  "keywords": [
+    "json",
+    "reader",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.19.11",
+    "typescript": "^5.0.0",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "@fxts/core": "^1.15.0"
+  }
+}
