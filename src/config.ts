@@ -1,18 +1,12 @@
 import { resolve } from "path";
 
-// Configuration interface
-export interface Config {
-  dbPath: string;
-  // Add more configuration options as needed
-}
-
 // Default configuration
-const defaultConfig: Config = {
-  dbPath: resolve(__dirname, "../db/users.json"),
+const defaultConfig = {
+  dbPath: (str: string) => resolve(__dirname, `../db/${str}.json`),
 };
 
 // Load configuration (can be extended to read from environment or config files)
-export const loadConfig = (): Config => {
+export const loadConfig = () => {
   // Priority order:
   // 1. Environment variable (if needed in future)
   // 2. Config file (if needed in future)
@@ -20,8 +14,6 @@ export const loadConfig = (): Config => {
 
   return {
     ...defaultConfig,
-    // Override with environment variable if exists
-    dbPath: process.env.DB_FILE_PATH || defaultConfig.dbPath,
   };
 };
 

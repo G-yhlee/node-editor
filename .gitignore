@@ -1,3 +1,6 @@
+#db
+db
+
 # Compiled output
 dist/
 *.js
@@ -37,3 +40,6 @@ coverage/
 *.tmp
 *.temp
 .cache/
+
+# Output directory
+output/
