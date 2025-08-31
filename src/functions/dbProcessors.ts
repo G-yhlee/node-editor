@@ -10,7 +10,7 @@ export const formatUser = (user: { name: string; email: string }): string =>
 export const processDbData = curry((key: string) => (dbData: any) => {
   const header = "\n=== DB 데이터 처리 ===";
   const pipeMap = {
-    sample: (dbData: string) => pipeSample(dbData),
+    sample: (dbData: string) => pipeSample(dbData[0]),
   };
   return pipeMap[key as keyof typeof pipeMap](dbData);
 });

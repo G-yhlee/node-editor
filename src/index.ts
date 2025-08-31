@@ -17,7 +17,7 @@ const main = () => {
   log("프로그램 시작...");
 
   pipe(
-    config.dbPath("sample"),
+    config.dbPath("sample2"),
     readDbFileWithLog,
     unwrapEither,
     processDbData("sample"),
