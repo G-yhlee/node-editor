@@ -17,11 +17,11 @@ const main = () => {
   log("프로그램 시작...");
 
   pipe(
-    config.dbPath("sample2"),
+    config.dbPath("r2s"),
     readDbFileWithLog,
     unwrapEither,
-    processDbData("sample"),
-    saveToOutput("processed_sample"),
+    processDbData("r2s"),
+    saveToOutput("processed_r2s"),
     logPassWithMessage("처리된 데이터:")
   );
 };

@@ -1,5 +1,6 @@
 import { pipe, map, curry } from "@fxts/core";
 import { pipeSample } from "../pipes";
+import { pipeR2s } from "../pipes/pipeSample";
 
 // 순수 함수: 사용자 정보 포맷팅
 export const formatUser = (user: { name: string; email: string }): string =>
@@ -11,6 +12,7 @@ export const processDbData = curry((key: string) => (dbData: any) => {
   const header = "\n=== DB 데이터 처리 ===";
   const pipeMap = {
     sample: (dbData: string) => pipeSample(dbData[0]),
+    r2s: (dbData: string) => pipeR2s(dbData),
   };
   return pipeMap[key as keyof typeof pipeMap](dbData);
 });
